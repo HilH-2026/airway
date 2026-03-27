@@ -1,0 +1,21 @@
+{
+  "name": "COFK Emergency Airway Algorithms",
+  "short_name": "Airway Algorithms",
+  "description": "Emergency airway algorithms for trach/vent nurses",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#283a66",
+  "theme_color": "#283a66",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
