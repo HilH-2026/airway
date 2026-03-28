@@ -1,6 +1,6 @@
 {
   "name": "COFK Emergency Airway Algorithms",
-  "short_name": "Airway Emergencies COFK",
+  "short_name": "COFK Airway ER",
   "description": "Emergency airway algorithms for trach/vent nurses",
   "start_url": "/airway/",
   "display": "standalone",
