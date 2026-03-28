@@ -61,7 +61,7 @@ body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--warm
 .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: var(--navy); display: flex; z-index: 100; padding-bottom: env(safe-area-inset-bottom); border-top: 1px solid rgba(255,255,255,0.1); }
 .bottom-nav button { flex: 1; background: none; border: none; color: rgba(255,255,255,0.6); font-family: inherit; font-size: 10px; padding: 10px 4px 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; transition: color 0.15s; }
 .bottom-nav button.active { color: #fff; }
-.bottom-nav button .nav-dot { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.6); transition: all 0.15s; }
+.bottom-nav button .nav-dot { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
 .bottom-nav button.active .nav-dot { background: rgba(255,255,255,0.2); color: #fff; }
 
 .home-hero { background: var(--navy); padding: 30px 20px 40px; text-align: center; }
@@ -72,7 +72,7 @@ body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--warm
 .home-buttons { padding: 0 16px; margin-top: -24px; }
 .home-btn { display: block; width: 100%; border: none; border-radius: 14px; padding: 20px; margin-bottom: 12px; cursor: pointer; text-align: left; font-family: inherit; transition: transform 0.1s; position: relative; overflow: hidden; }
 .home-btn:active { transform: scale(0.98); }
-.home-btn .btn-num { font-size: 36px; font-weight: 700; opacity: 0.12; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); }
+.home-btn .btn-tap { font-size: 11px; opacity: 0.45; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-style: italic; }
 .home-btn h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
 .home-btn p { font-size: 12px; opacity: 0.8; }
 .btn-plug { background: var(--red); color: #fff; }
@@ -168,17 +168,17 @@ body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--warm
     <button class="home-btn btn-plug" onclick="go('plug')">
       <h3>Trach Plug</h3>
       <p>Obstruction of tracheostomy tube</p>
-      <div class="btn-num">1</div>
+      <div class="btn-tap">Tap to start</div>
     </button>
     <button class="home-btn btn-decan" onclick="go('decan')">
       <h3>Decannulation / Dislodgement</h3>
       <p>Displacement of tracheostomy tube</p>
-      <div class="btn-num">2</div>
+      <div class="btn-tap">Tap to start</div>
     </button>
     <button class="home-btn btn-unable" onclick="go('unable')">
       <h3>Unable to Insert a Trach</h3>
       <p>Functional upper airway cycle</p>
-      <div class="btn-num">3</div>
+      <div class="btn-tap">Tap to start</div>
     </button>
   </div>
   <div class="home-learn">
@@ -327,26 +327,25 @@ body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--warm
 
     <div class="att-label">Step 1</div>
     <div class="step-box" style="text-align:left;padding:14px 16px;">
-      <b style="text-align:center;display:block;margin-bottom:8px;">Reposition head &amp; neck</b>
-      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b>
+      <b style="text-align:center;display:block;margin-bottom:8px;">Reposition head &amp; neck</b> 
+      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b> 
       <b style="text-align:center;display:block;margin-bottom:8px;">Bag/mask to face &amp; breath x2</b> 
     </div>
     <div class="ifno">No chest rise &darr;</div>
 
     <div class="att-label">Step 2</div>
     <div class="step-box" style="text-align:left;padding:14px 16px;">
-      <b style="text-align:center;display:block;margin-bottom:8px;">Reposition head &amp; neck</b>
-      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b>
+      <b style="text-align:center;display:block;margin-bottom:8px;">Reposition head &amp; neck</b> 
+      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b> 
       <b style="text-align:center;display:block;margin-bottom:8px;">Bag/mask to face &amp; breath x2</b> 
     </div>
     <div class="ifno">No chest rise &darr;</div>
 
     <div class="att-label">Step 3</div>
     <div class="step-box" style="text-align:left;padding:14px 16px;">
-      <b style="text-align:center;display:block;margin-bottom:8px;">Reposition head &amp; neck</b>
-      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b>
+      <b style="text-align:center;display:block;margin-bottom:8px;">Reposition head &amp; neck</b> 
+      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b> 
       <b style="text-align:center;display:block;margin-bottom:8px;">Bag/mask to face &amp; breath x2</b> 
-    </div>
     <div class="ifno">No chest rise &darr;</div>
 
     <div class="att-label">Step 4</div>
@@ -385,12 +384,12 @@ body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--warm
       <span style="color:var(--amber-text);">If &lt;60 BPM deliver 30 compressions<br>*infants to puberty or per POC</span>
     </div>
 
-     <div class="repeat-banner" id="cycle-top"><span>REPEAT CYCLE IF UNABLE TO INSERT. DO NOT STOP.</span></div>
+    <div class="repeat-banner" id="cycle-top"><span>REPEAT CYCLE IF UNABLE TO INSERT. DO NOT STOP.</span></div> 
 
     <div class="att-label">Step 1</div>
     <div class="step-box" style="text-align:left;padding:14px 16px;">
       <b style="text-align:center;display:block;margin-bottom:8px;">Reposition head &amp; neck</b>
-      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b>
+      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b> 
       <b style="text-align:center;display:block;margin-bottom:8px;">Bag/mask to face &amp; breath x2</b> 
     </div>
     <div class="ifno">No chest rise &darr;</div>
@@ -398,7 +397,7 @@ body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--warm
     <div class="att-label">Step 2</div>
     <div class="step-box" style="text-align:left;padding:14px 16px;">
       <b style="text-align:center;display:block;margin-bottom:8px;">Reposition head &amp; neck</b>
-      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b>
+      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b> 
       <b style="text-align:center;display:block;margin-bottom:8px;">Bag/mask to face &amp; breath x2</b> 
     </div>
     <div class="ifno">No chest rise &darr;</div>
@@ -406,7 +405,7 @@ body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--warm
     <div class="att-label">Step 3</div>
     <div class="step-box" style="text-align:left;padding:14px 16px;">
       <b style="text-align:center;display:block;margin-bottom:8px;">Reposition head &amp; neck</b>
-      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b>
+      <b style="text-align:center;display:block;margin-bottom:8px;">Cover &amp; seal stoma</b> 
       <b style="text-align:center;display:block;margin-bottom:8px;">Bag/mask to face &amp; breath x2</b> 
     </div>
     <div class="ifno">No chest rise &darr;</div>
@@ -549,23 +548,23 @@ body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--warm
 <!-- ==================== BOTTOM NAV ==================== -->
 <div class="bottom-nav">
   <button id="nav-home" class="active" onclick="go('home')">
-    <div class="nav-dot" style="font-size:16px;">&#8962;</div>
+    <div class="nav-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
     Home
   </button>
   <button id="nav-plug" onclick="go('plug')">
-    <div class="nav-dot" style="background:rgba(255,255,255,0.1);">1</div>
+    <div class="nav-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
     Plug
   </button>
   <button id="nav-decan" onclick="go('decan')">
-    <div class="nav-dot" style="background:rgba(255,255,255,0.1);">2</div>
-    Decan
+    <div class="nav-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
+    Displaced
   </button>
   <button id="nav-unable" onclick="go('unable')">
-    <div class="nav-dot" style="background:rgba(255,255,255,0.1);">3</div>
+    <div class="nav-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></div>
     Unable
   </button>
   <button id="nav-learn" onclick="go('learn')">
-    <div class="nav-dot" style="background:rgba(255,255,255,0.1);font-size:14px;">i</div>
+    <div class="nav-dot"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></div>
     Learn
   </button>
 </div>
