@@ -4,8 +4,8 @@
   "description": "Emergency airway algorithms for trach/vent nurses",
   "start_url": "/airway/",
   "display": "standalone",
-  "background_color": "#283a66",
-  "theme_color": "#283a66",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "/airway/icon.png",
